@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: #c8e0c0;
+    text-align: center;
+    margin: 0;
+}
+
+#container {
+    height: 100%;
+    width: 800px;
+    margin-top: 0;
+    /*中央の幅の指定*/
+    margin: 0 auto;
+    background: #fff;
+    /*中央の背景を白にする指定*/
+    background-attachment: fixed;
+}
+
+.contents {
+    position: relative;
+}
+
+.input[type=text]:focus,
+.textarea:focus {
+    color: #003a6c;
+    background-color: #d9f6ff;
+    display: inline-block;
+    text-align: left;
+}
+
+.btn-3d-shadow {
+    display: inline-block;
+    max-width: 180px;
+    text-align: left;
+    border: 2px solid #9ec34b;
+    font-size: 16px;
+    color: #b7d673;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: .4s;
+}
+
+.btn-3d-shadow:hover {
+    background-color: #9ec34b;
+    border-color: #cbe585;
+    color: #fff;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;
+    color: #CCC;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+}
+
+.button:active {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    border-bottom: none;
+}
+
+.create {
+    position: fixed;
+    left: 85%;
+    top: 80%;
+
+}
