@@ -1,5 +1,5 @@
 import java.io.IOException;
-
+//ãƒ†ã‚¹ãƒˆãƒŠã‚¦
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,16 +16,16 @@ public class ThreadServlet extends HttpServlet{
     public void doPost(HttpServletRequest req,HttpServletResponse res)
         throws IOException,ServletException{
         req.setCharacterEncoding("Windows-31J");
-		//ƒŠƒXƒg‚Ì’l‚ğ‚Á‚Ä‚«‚½‚¢
+		//ï¿½ï¿½ï¿½Xï¿½gï¿½Ì’lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½
         //
         ArrayList<B_boardBean> _b_board = DataSelect.b_boardSelect();
 
-        //ƒf[ƒ^ƒx[ƒX‚É•Û‘¶‚³‚ê‚½ƒXƒŒƒbƒh‚ğæ‚èo‚·
+        //ï¿½fï¿½[ï¿½^ï¿½xï¿½[ï¿½Xï¿½É•Û‘ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½Xï¿½ï¿½ï¿½bï¿½hï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½
         req.setAttribute("_b_board",_b_board);
-		//“]‘—æ‚Ìjsp‚ğw’è
+		//ï¿½]ï¿½ï¿½ï¿½ï¿½ï¿½jspï¿½ï¿½ï¿½wï¿½ï¿½
         RequestDispatcher dispatcher=
             req.getRequestDispatcher("/result");
-		//‘—‚é
+		//ï¿½ï¿½ï¿½ï¿½
         dispatcher.forward(req,res);
     }
 	public void doGet(HttpServletRequest req,HttpServletResponse res)
