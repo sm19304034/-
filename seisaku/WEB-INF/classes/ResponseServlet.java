@@ -11,7 +11,7 @@ import database.ResponseBean;
 
 // import jdk.nashorn.internal.ir.RuntimeNode.Request;
 //もう一回
-//jdbc
+//パスワードはData
 public class ResponseServlet extends HttpServlet{
     public void doPost(HttpServletRequest req,HttpServletResponse res)
         throws IOException,ServletException{
