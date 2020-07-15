@@ -17,7 +17,7 @@ public class ThreadServlet extends HttpServlet{
         throws IOException,ServletException{
         req.setCharacterEncoding("Windows-31J");
 		//���X�g�̒l�������Ă�����
-        //
+        //再度追加
         ArrayList<B_boardBean> _b_board = DataSelect.b_boardSelect();
 
         //�f�[�^�x�[�X�ɕۑ����ꂽ�X���b�h�����o��
