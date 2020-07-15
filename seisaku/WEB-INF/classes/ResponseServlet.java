@@ -10,37 +10,37 @@ import java.util.ArrayList;
 import database.ResponseBean;
 
 // import jdk.nashorn.internal.ir.RuntimeNode.Request;
-
+//ã‚‚ã†ä¸€å›
 public class ResponseServlet extends HttpServlet{
     public void doPost(HttpServletRequest req,HttpServletResponse res)
         throws IOException,ServletException{
-        //•¶šƒR[ƒhw’è
+        //ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½[ï¿½hï¿½wï¿½ï¿½
         req.setCharacterEncoding("Windows-31J");
 
-        //Post—v‹‚É‚æ‚Á‚Ä‘—M‚³‚ê‚½ƒpƒ‰ƒ[ƒ^‚ğæ“¾‚·‚é
+        //Postï¿½vï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½Ä‘ï¿½ï¿½Mï¿½ï¿½ï¿½ê‚½ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½ï¿½
         String resname=req.getParameter("responsename");
         String rescomment=req.getParameter("rescomment");
 		int b_board_id=Integer.parseInt(req.getParameter("b_board_id"));
 
-		//ƒf[ƒ^ƒx[ƒX‚ÉƒRƒƒ“ƒg‚ğ‘‚«‚Ş
+		//ï¿½fï¿½[ï¿½^ï¿½xï¿½[ï¿½Xï¿½ÉƒRï¿½ï¿½ï¿½ï¿½ï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		DataInsert.responseInsert(resname, rescomment, b_board_id);
 
         	DataSelect ds=new DataSelect();
         	ArrayList arraylist1=ds.ResponseSelect(b_board_id);
 			ArrayList arraylist2=ds.b_boardSelect(b_board_id);
-        	//ƒf[ƒ^ƒx[ƒX‚ÉƒRƒƒ“ƒg‚ğˆêŒ•Û‘¶‚·‚é
+        	//ï¿½fï¿½[ï¿½^ï¿½xï¿½[ï¿½Xï¿½ÉƒRï¿½ï¿½ï¿½ï¿½ï¿½gï¿½ï¿½ï¿½êŒï¿½Û‘ï¿½ï¿½ï¿½ï¿½ï¿½
 
-		//ƒf[ƒ^ƒx[ƒX‚©‚ç•Û‘¶‚³‚ê‚½ƒRƒƒ“ƒg‚ğ‘S‚Äæ‚èo‚·
-        //±Ú²¯
+		//ï¿½fï¿½[ï¿½^ï¿½xï¿½[ï¿½Xï¿½ï¿½ï¿½ï¿½Û‘ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½Rï¿½ï¿½ï¿½ï¿½ï¿½gï¿½ï¿½Sï¿½Äï¿½ï¿½oï¿½ï¿½
+        //ï¿½Ú²ï¿½
         //req.setAttribute("",);
 		req.setAttribute("reslist",arraylist1);
 		req.setAttribute("b_boardlist",arraylist2);
 		req.setAttribute("b_board_id",b_board_id);
 
-		// ZŠƒZƒbƒg
+		// ï¿½Zï¿½ï¿½ï¿½Zï¿½bï¿½g
          RequestDispatcher dis= req.getRequestDispatcher("/response.jsp");
 
-	 	//‘—‚é
+	 	//ï¿½ï¿½ï¿½ï¿½
     	  dis.forward(req,res);
 
      }
