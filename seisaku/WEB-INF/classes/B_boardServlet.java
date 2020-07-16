@@ -10,40 +10,40 @@ import java.util.ArrayList;
 import database.B_boardBean;
 
 //import jdk.nashorn.internal.ir.RuntimeNode.Request;
-
+//ç§¦ä½³å†´
 public class B_boardServlet extends HttpServlet{
     public void doPost(HttpServletRequest req,HttpServletResponse res)
         throws IOException,ServletException{
         //DataInsert inser = new DataInsert();
-        //•¶šƒR[ƒhİ’è
+        //ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½[ï¿½hï¿½İ’ï¿½
         req.setCharacterEncoding("Windows-31J");
 
-		//jsp‚Ìname‚É“ü‚ê‚é
+		//jspï¿½ï¿½nameï¿½É“ï¿½ï¿½ï¿½ï¿½
         String title=req.getParameter("title");
         String name=req.getParameter("name");
         String body=req.getParameter("body");
 		System.out.println(title);
 
-        //ƒf[ƒ^ƒx[ƒX‚ÉˆêŒ‘‚«‚Ş
+        //ï¿½fï¿½[ï¿½^ï¿½xï¿½[ï¿½Xï¿½ÉˆêŒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
         	DataInsert.b_boardinsert(title, name, body);
 
         DataSelect ds=new DataSelect();
         ArrayList arraylist=ds.b_boardSelect();
-        //ƒf[ƒ^ƒx[ƒX‚ÉˆêŒ•Û‘¶‚·‚é
-        	//ƒAƒŒƒC“ü‚ê‚Æ‚¯
+        //ï¿½fï¿½[ï¿½^ï¿½xï¿½[ï¿½Xï¿½ÉˆêŒï¿½Û‘ï¿½ï¿½ï¿½ï¿½ï¿½
+        	//ï¿½Aï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½ï¿½Æ‚ï¿½
         	System.out.println("List = " +arraylist);
-        	System.out.println("—v‘f” = " + arraylist.size());
+        	System.out.println("ï¿½vï¿½fï¿½ï¿½ = " + arraylist.size());
         //
 
-		//•Û‘¶‚³‚ê‚Ä‚¢‚é‚à‚Ì‘S‚Ä‚ğæ‚èo‚·
+		//ï¿½Û‘ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½Ì‘Sï¿½Ä‚ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½
         req.setAttribute("list",arraylist);
 
-        //‘—‚èæƒZƒbƒg
+        //ï¿½ï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½g
         RequestDispatcher dispatcher=
             req.getRequestDispatcher("result");
 
-		//‘—‚é
+		//ï¿½ï¿½ï¿½ï¿½
         dispatcher.forward(req,res);
     }
 	// private void b_board(String t,String n,String b){
@@ -51,28 +51,28 @@ public class B_boardServlet extends HttpServlet{
  	//System.out.println(t);
  //}
 	//
-	//select—p
+	//selectï¿½p
     public void doGet(HttpServletRequest req,HttpServletResponse res)throws IOException,ServletException{
     DataSelect ds=new DataSelect();
-     //request“à‚Åg‚Á‚Ä‚é•¶šƒR[ƒh‚Ìİ’è
+     //requestï¿½ï¿½ï¿½Ågï¿½ï¿½ï¿½Ä‚é•¶ï¿½ï¿½ï¿½Rï¿½[ï¿½hï¿½Ìİ’ï¿½
       req.setCharacterEncoding("Windows-31J");
 
-      //id‚ğó‚¯æ‚é
+      //idï¿½ï¿½ï¿½ó‚¯ï¿½ï¿½
       String id = req.getParameter("id");
 	  ArrayList arraylist=ds.b_boardSelect();
 
 	  System.out.println("List = " +arraylist);
-	  System.out.println("—v‘f” = " + arraylist.size());
+	  System.out.println("ï¿½vï¿½fï¿½ï¿½ = " + arraylist.size());
 
-  	//•Û‘¶‚³‚ê‚Ä‚¢‚é‚à‚Ì‘S‚Ä‚ğæ‚èo‚·
+  	//ï¿½Û‘ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½Ì‘Sï¿½Ä‚ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½
  	req.setAttribute("list",arraylist);
-      //res_table•\‚ª“ü‚Á‚½list‚ÆAthread_id‚ğrequest‚Éset
+      //res_tableï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½listï¿½ÆAthread_idï¿½ï¿½requestï¿½ï¿½set
       req.setAttribute("id",id);
       //req.setAttribute("users",list);
 
-      //‘—‚èæ‚Ìw’èijsp‚Ìaction‚Æ“¯‚¶)
+      //ï¿½ï¿½ï¿½ï¿½ï¿½Ìwï¿½ï¿½ijspï¿½ï¿½actionï¿½Æ“ï¿½ï¿½ï¿½)
       RequestDispatcher dis= req.getRequestDispatcher("result");
-      //ÀÛ‚É‘—‚é
+      //ï¿½ï¿½ï¿½Û‚É‘ï¿½ï¿½ï¿½
       dis.forward(req,res);
     }
 }
