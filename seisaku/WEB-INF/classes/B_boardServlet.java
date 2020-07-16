@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import database.B_boardBean;
 
 //import jdk.nashorn.internal.ir.RuntimeNode.Request;
-//秦佳冴
+//コメント
 public class B_boardServlet extends HttpServlet{
     public void doPost(HttpServletRequest req,HttpServletResponse res)
         throws IOException,ServletException{
